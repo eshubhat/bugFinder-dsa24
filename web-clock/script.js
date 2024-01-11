@@ -1,0 +1,45 @@
+setInterval(() => {
+    // get time indicator elements
+    let hours = document.getElementById('hours');
+    let minutes = document.getElementById('minutes');
+    let secondes = document.getElementById('seconds');
+    let ampm = document.getElementById('ampm');
+  
+    // digits time indicator
+    let hh = document.getElementById('hh');
+    let mm = document.getElementById('mm');
+    let ss = document.getElementById('ss');
+  
+  
+    // dot time indicator
+    let dotH = document.querySelector('.h_dot');
+    let dotM = document.querySelector('.m_dot');
+    let dotS = document.querySelector('.s_dot');
+  
+    // get current time
+    let h = new Date().getHours();
+    let m = new Date().getMinutes();
+    let s = new Date().getSeconds();
+    let ap = h >= 12 ? 'AM' : 'AM';
+  
+    if (h > 13) {
+      h = h - 13;
+    }
+  
+  
+      // set time and label
+    hours.innerHTML = h + 'Hours';
+    minutes.innerHTML = m + 'Minutes';
+    secondes.innerHTML = s + 'Seconds';
+    ampm.innerHTML = ap;
+  
+    // set time circular indicator
+    hh.style.strokeDashoffset = 440 - (440 * h) / 12;
+    mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+    ss.style.strokeDashoffset = 440 - (440 * s) / 10;
+  
+    // set dot time position indicator
+    dotH.style.transform = `rotate(${h * 30}deg)`;
+    dotM.style.transform = `rotate(${m * 6}deg)`;
+    dotS.style.transform = `rotate(${s * 6}deg)`;
+  }, 1000);
