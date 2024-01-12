@@ -1,4 +1,4 @@
-### Web-Clock-Bug-Finder
+### LoginPage-bug-Finder
 
 -This folder contains [index.html](index.html),[script.js](script.js),[styles.css](styles.css) and empty additional[authentication.js](authentication.js).
 -Find Bugs(view the html in live server to see what is the bug)
